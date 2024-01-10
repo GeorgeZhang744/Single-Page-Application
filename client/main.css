@@ -1,0 +1,315 @@
+/* General styling for the body */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* General styling for the body end*/
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for the main title */
+#title {
+  margin-top: 50px;
+}
+/* Styling for the main title end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for input elements */
+input[type="text"],
+input[type="number"] {
+  border: 1px solid gray;
+}
+
+input[type="button"] {
+  cursor: pointer;
+}
+/* Styling for input elements end*/
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for the main panel of the generator */
+#pwd-options,
+#controls {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+#controls {
+  margin-top: 15px;
+}
+/* Styling for the main panel of the generator end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for password options section */
+#pwd-options {
+  height: 360px;
+}
+
+#pwd-options > div {
+  height: 30px;
+  margin: 10px;
+  display: flex;
+}
+
+.option-label {
+  flex: 1;
+}
+
+.option-selector {
+  flex: 1;
+}
+
+#length-selection {
+  width: 300px;
+}
+
+#slider-range {
+  margin-top: 5px;
+  width: 190px;
+  height: 10px;
+}
+/* Styling for password options section end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for top and bottom controls */
+#top-controls,
+#bottom-controls {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+}
+
+#controls > div > label {
+  margin-bottom: 5px;
+  width: 150px;
+}
+
+.control-textbox,
+.control-btn,
+input[type="checkbox"] {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+/* Styling for top and bottom controls end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for popup backgrounds */
+#popup-background,
+#pwd-update-popup-background,
+#loading-background {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: aliceblue;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* Styling for popup backgrounds end*/
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for popups */
+.popup {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-textbox {
+  width: 100%;
+  height: 30px;
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-btn {
+  width: 70%;
+  margin: 5px auto;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* Styling for popups end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for loading message */
+#loading-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+/* Styling for loading message end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for error messages in login and sign-up forms */
+#login-err-msg,
+#sign-up-err-msg {
+  color: red;
+  display: none;
+  margin-bottom: 10px;
+}
+/* Styling for error messages in login and sign-up forms end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for login form */
+#login-popup {
+  width: 400px;
+  height: 350px;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#login-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-password {
+  margin-bottom: 15px;
+}
+
+#user-password {
+  margin-bottom: 15px;
+}
+/* Styling for login form end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for create new account form */
+#create-account-popup {
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+}
+/* Styling for create new account form end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for pwd database */
+#pwd-database-popup {
+  display: none;
+  width: 600px;
+  height: 500px;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Styling for password Id selection */
+#id-selection {
+  display: flex;
+  height: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+#id-selector-label {
+  margin-right: 10px;
+}
+
+#id-selector {
+  width: 100px;
+  height: 100%;
+  flex-grow: 3;
+  margin-right: 10px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+}
+
+.selection-btn {
+  height: 100%;
+  margin-left: 20px;
+  margin-left: 5px;
+}
+/* Styling for password Id selection end */
+
+/* Styling for the password displaying section */
+#pwd-displaying {
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  height: 388px;
+  overflow-y: auto;
+}
+
+#pwd-displaying table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#pwd-displaying th,
+#pwd-displaying td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  width: 33.3%;
+}
+
+#pwd-displaying th {
+  background-color: #4caf50;
+  color: white;
+}
+/* Styling for the password displaying section end */
+
+/* Styling for the page flipper section */
+#page-flipper {
+  margin-top: 20px;
+}
+
+#curr-page-number {
+  margin: 0 10px;
+}
+
+#exit-database {
+  margin-top: 15px;
+}
+/* Styling for the page flipper section end*/
+/* Styling for pwd database end */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* Styling for the password update popup */
+#pwd-update-popup {
+  flex-direction: column;
+  width: 400px;
+  height: 250px;
+}
+
+#new-pwd {
+  margin-bottom: 15px;
+}
+/* Styling for the password update popup end*/

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+
+    <script src="main.js" type="module"></script>
+    <!-- <script src="utf8.js" type="module"></script> -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h2 id="title">Password Generator</h2>
+    <div id="pwd-options">
+      <div id="pwd-length">
+        <div class="option-label">Password Length:</div>
+        <div class="option-selector">
+          <select id="length-selection">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+      </div>
+      <div id="include-number">
+        <div class="option-label">Include Number:</div>
+        <div class="option-selector">
+          <input type="checkbox" id="number-checkbox" checked /><label for="number-checkbox">e.g. 123456</label>
+        </div>
+      </div>
+      <div id="include-lowercase">
+        <div class="option-label">Include Lowercase:</div>
+        <div class="option-selector">
+          <input type="checkbox" id="lowercase-checkbox" checked /><label for="lowercase-checkbox">e.g. abcdef</label>
+        </div>
+      </div>
+      <div id="include-uppercase">
+        <div class="option-label">Include Uppercase:</div>
+        <div class="option-selector">
+          <input type="checkbox" id="uppercase-checkbox" checked /><label for="uppercase-checkbox">e.g. ABCFEF</label>
+        </div>
+      </div>
+      <div id="include-symbol">
+        <div class="option-label">Include Symbol:</div>
+        <div class="option-selector">
+          <input type="checkbox" id="symbol-checkbox" checked /><label for="symbol-checkbox">e.g. !@#$%^</label>
+        </div>
+      </div>
+      <div id="exclude-similar-char">
+        <div class="option-label">Exclude Similar Characters:</div>
+        <div class="option-selector">
+          <input type="checkbox" id="similar-checkbox" /><label for="similar-checkbox">e.g. 1, I, l, 0, o, O</label>
+        </div>
+      </div>
+      <div id="exclude-ambiguous-char">
+        <div class="option-label">Exclude Ambiguous Characters:</div>
+        <div class="option-selector">
+          <input type="checkbox" id="ambiguous-checkbox" /><label for="ambiguous-checkbox">e.g. [, ], (, ), {, }</label>
+        </div>
+      </div>
+      <div id="strength-slider">
+        <div class="option-label">Password Strength</div>
+        <div class="option-selector">
+          <span>Weak</span>
+          <input type="range" id="slider-range" min="0" max="2" step="1" />
+          <span>Strong</span>
+        </div>
+      </div>
+      <div id="apply-strength-slider">
+        <div class="option-label">Apply Strength Slider</div>
+        <div class="option-selector">
+          <input type="checkbox" id="slider-checkbox" /><label for="slider-checkbox">Generate Password Based on Slider</label>
+        </div>
+      </div>
+    </div>
+    <div id="controls">
+      <div id="top-controls">
+        <label for="pwd-name">Password Name:</label><input type="text" id="pwd-name" class="control-textbox" />
+        <input type="button" id="generate" class="control-btn" value="Generate" />
+        <input type="button" id="save" class="control-btn" value="Save" />
+      </div>
+      <div id="bottom-controls">
+        <label for="generated-pwd">Generated Password:</label
+        ><input type="text" id="generated-pwd" class="control-textbox" />
+        <input type="button" id="copy" class="control-btn" value="Copy" />
+        <input type="button" id="saved-pwd" class="control-btn" value="Saved Passwords" />
+      </div>
+    </div>
+    <div id="popup-background">
+      <div id="login-popup" class="popup">
+        <form id="login">
+          <h2 id="login-title">Login</h2>
+          <div id="login-err-msg">Incorrect username or password</div>
+          <div id="login-input-group">
+            <input type="text" id="login-username" class="popup-textbox" placeholder="Username" />
+            <input type="text" id="login-password" class="popup-textbox" placeholder="Password" />
+            <input type="button" id="login-btn" class="popup-btn" value="Continue" />
+            <input type="button" id="sign-up-btn" class="popup-btn" value="Create Account" />
+            <input type="button" id="exit-login"  class="popup-btn" value="Exit" />
+          </div>
+        </form>
+      </div>
+      <div id="create-account-popup" class="popup">
+        <h2 id="sign-up-title">Sign Up</h2>
+        <div id="sign-up-err-msg"></div>
+        <input type="text" id="new-username" class="popup-textbox" placeholder="Username" />
+        <input type="text" id="user-password" class="popup-textbox" placeholder="Password" />
+        <input type="button" id="create-new-account" class="popup-btn" value="Create">
+        <input type="button" id="cancel-sign-up" class="popup-btn" value="Cancel">
+      </div>
+      <div id="pwd-database-popup" class="popup">
+        <div id="id-selection">
+          <label for="id-selector" id="id-selector-label">Select Password Id:</label
+          ><input type="number" id="id-selector" />
+          <input type="button" id="copy-in-database" class="selection-btn" value="Copy" />
+          <input type="button" id="delete" class="selection-btn" value="Delete" />
+          <input type="button" id="update" class="selection-btn" value="Update" />
+        </div>
+        <div id="pwd-displaying"></div>
+        <div id="page-flipper">
+          <input type="button" value="&#8592" id="prev-page">
+          <span id="curr-page-number"></span>
+          <input type="button" value="&#8594" id="next-page">
+        </div>
+        <input type="button" id="exit-database" value="Exit">
+      </div>
+      <div id="pwd-update-popup-background">
+        <div id="pwd-update-popup" class="popup">
+          <h2>Update</h2>
+          <input type="text" id="new-pwd-name" class="popup-textbox" placeholder="New Password Name" />
+          <input type="text" id="new-pwd" class="popup-textbox" placeholder="New Password" />
+          <input type="button" id="confirm" class="popup-btn" value="Confirm">
+        </div>
+      </div>
+    </div>
+    <div id="loading-background">
+      <h1 id="loading-msg">Loading...</h1>
+    </div>
+  </body>
+</html>
